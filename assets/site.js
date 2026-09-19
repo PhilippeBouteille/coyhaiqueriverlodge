@@ -63,10 +63,13 @@
   }
   if (hero) hero.addEventListener('click', revealSite);
   window.addEventListener('scroll', function () { if (window.scrollY > 4) revealSite(); }, { once: true, passive: true });
-  document.addEventListener('keydown', revealSite, { once: true });
+  // Teclado: solo Tab, Enter o Espacio (no cualquier tecla), para no romper el hero por accidente
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Tab' || e.key === 'Enter' || e.key === ' ') revealSite();
+  });
   if (window.location.hash && window.location.hash !== '#top') revealSite();
-  if (reducedMotion()) revealSite();
-  else if (CFG.autoRevealMs > 0) setTimeout(revealSite, CFG.autoRevealMs);
+  // Revelado automático: desactivado por defecto (0). Se configura en site.json -> hero.auto_reveal_ms
+  if (CFG.autoRevealMs > 0) setTimeout(revealSite, CFG.autoRevealMs);
 
   /* ---------- Video del hero: mp4/webm > HLS > imagen fija ---------- */
   var video = $('#heroVideo');

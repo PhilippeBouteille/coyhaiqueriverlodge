@@ -26,6 +26,8 @@
     "mp4": "",
     "webm": "",
     "hls": "https://coyhaiqueriverlodge.com/media/videos/12/master.m3u8",
+    "auto_reveal_ms": 0,
+    "_auto_reveal_ms": "0 = el texto y el menú aparecen solo con clic, scroll o Tab (logo pulsante visible todo el tiempo). Ej.: 8000 = se revelan solos tras 8 s.",
     "_note": "Ordre: mp4/webm (recommandé: boucle de 5-10 Mo) > hls > image fixe. Poser le fichier dans assets/video/ et écrire ici 'assets/video/hero.mp4' (le build ajoute le préfixe ../)."
   },
 

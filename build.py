@@ -296,7 +296,7 @@ def build_config(lang, t, site):
         "lang": lang,
         "formEndpoint": site.get("form_endpoint", ""),
         "email": site["contact"]["email"],
-        "autoRevealMs": 3500,
+        "autoRevealMs": int(site.get("hero", {}).get("auto_reveal_ms", 0)),
         "labels": {k: f[k] for k in ("name", "email", "phone", "reply_lang", "program", "arrival", "departure", "guests", "message", "slot_selected")},
         "msg": {
             "sending": f["sending"],
