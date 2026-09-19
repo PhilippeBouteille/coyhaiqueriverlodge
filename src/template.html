@@ -40,7 +40,7 @@
       <!--@nav-->
     </nav>
     <div class="nav-cta">
-      <div class="lang-switch" role="group" aria-label="{{@ t.ui.lang_label }}">
+      <div class="lang-switch"<!--@lang_switch_attr--> role="group" aria-label="{{@ t.ui.lang_label }}">
         <!--@lang_switch-->
       </div>
       <a class="whatsapp-btn" href="https://wa.me/{{ site.contact.whatsapp }}" aria-label="{{@ t.ui.whatsapp }}" target="_blank" rel="noopener">
@@ -59,7 +59,7 @@
 <!-- ============ HERO ============ -->
 <div class="hero" id="top">
   <img class="poster" src="{{ assets }}/img/hero-poster.jpg" alt="{{@ t.meta.og_image_alt }}" fetchpriority="high">
-  <video id="heroVideo" muted loop playsinline preload="none" aria-hidden="true"
+  <video id="heroVideo" muted playsinline preload="none" aria-hidden="true"
          data-mp4="{{ hero_mp4 }}" data-webm="{{ hero_webm }}" data-hls="{{ hero_hls }}"></video>
   <div class="hero-cue" aria-hidden="true">
     <img class="cue-logo" id="heroCueLogo" src="{{ assets }}/img/logo-hero.png" alt="">

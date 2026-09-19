@@ -19,6 +19,9 @@
     "tripadvisor": ""
   },
 
+  "show_lang_switch": true,
+  "_show_lang_switch": "true = selector ES/EN/FR en la cabecera (cambio manual). false = se oculta; el idioma se detecta solo.",
+
   "form_endpoint": "",
   "_form_endpoint": "URL qui reçoit le POST JSON du formulaire (Supabase Edge Function, Formspree...). Vide = repli mailto vers contact.email.",
 
@@ -26,8 +29,14 @@
     "mp4": "",
     "webm": "",
     "hls": "https://coyhaiqueriverlodge.com/media/videos/12/master.m3u8",
+    "reveal_on_video_end": true,
+    "_reveal_on_video_end": "true = el texto y el menú aparecen al terminar el video (el video se reproduce una vez). Clic, scroll o Tab los muestran antes. false = el video hace bucle y solo clic/scroll/Tab revelan.",
+    "no_video_reveal_ms": 4000,
+    "_no_video_reveal_ms": "Si no hay video (sin fuente, ahorro de datos, movimiento reducido): ms antes de revelar solos.",
+    "video_start_timeout_ms": 8000,
+    "_video_start_timeout_ms": "Si el video no arranca en este tiempo (red lenta, error), se revela igual.",
     "auto_reveal_ms": 0,
-    "_auto_reveal_ms": "0 = el texto y el menú aparecen solo con clic, scroll o Tab (logo pulsante visible todo el tiempo). Ej.: 8000 = se revelan solos tras 8 s.",
+    "_auto_reveal_ms": "0 = sin revelado por temporizador. Ej.: 15000 = se revelan solos tras 15 s aunque el video siga.",
     "_note": "Ordre: mp4/webm (recommandé: boucle de 5-10 Mo) > hls > image fixe. Poser le fichier dans assets/video/ et écrire ici 'assets/video/hero.mp4' (le build ajoute le préfixe ../)."
   },
 

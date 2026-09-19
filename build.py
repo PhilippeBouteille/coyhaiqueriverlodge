@@ -142,6 +142,7 @@ def build_blocks(lang, t, site):
             f'<a href="../{l}/" hreflang="{l}" lang="{l}" data-lang="{l}" title="{esc(names[l])}"{cur}>{l.upper()}</a>'
         )
     b["lang_switch"] = "\n".join(switch)
+    b["lang_switch_attr"] = "" if site.get("show_lang_switch", True) else " hidden"
     b["lang_options"] = "\n".join(
         '<option value="%s"%s>%s</option>' % (l, " selected" if l == lang else "", names[l]) for l in LANGS
     )
@@ -290,6 +291,9 @@ def build_blocks(lang, t, site):
     return b
 
 
+DEFAULT_LANG_FALLBACK = "en"
+
+
 def build_config(lang, t, site):
     f = t["contact"]["form"]
     cfg = {
@@ -297,6 +301,9 @@ def build_config(lang, t, site):
         "formEndpoint": site.get("form_endpoint", ""),
         "email": site["contact"]["email"],
         "autoRevealMs": int(site.get("hero", {}).get("auto_reveal_ms", 0)),
+        "revealOnVideoEnd": bool(site.get("hero", {}).get("reveal_on_video_end", True)),
+        "noVideoRevealMs": int(site.get("hero", {}).get("no_video_reveal_ms", 4000)),
+        "videoStartTimeoutMs": int(site.get("hero", {}).get("video_start_timeout_ms", 8000)),
         "labels": {k: f[k] for k in ("name", "email", "phone", "reply_lang", "program", "arrival", "departure", "guests", "message", "slot_selected")},
         "msg": {
             "sending": f["sending"],
@@ -353,6 +360,7 @@ def build_page(lang, tpl, site, i18n):
 
 
 def build_root(site):
+    """Raiz '/': sin selector visible. Redirige por JS (si el servidor no lo hizo ya con vercel.json)."""
     base = site["base_url"].rstrip("/")
     robots = "noindex, nofollow" if site.get("noindex") else "index, follow"
     names = {l: load(SRC / "i18n" / f"{l}.json")["lang_name"] for l in LANGS}
@@ -373,35 +381,33 @@ def build_root(site):
 {alts}
 <link rel="icon" type="image/png" href="assets/img/logo.png">
 <style>
-  html,body{{height:100%;margin:0;}}
-  body{{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;background:#241610 url(assets/img/hero-poster.jpg) center/cover;
-       font-family:'Manrope',system-ui,sans-serif;color:#F7F3EA;text-align:center;}}
-  body::before{{content:"";position:fixed;inset:0;background:rgba(20,12,8,.62);z-index:0;}}
-  body > *{{position:relative;z-index:1;}}
+  html,body{{height:100%;margin:0;background:#241610;}}
+  body{{display:flex;align-items:center;justify-content:center;}}
   img{{height:96px;width:auto;filter:brightness(0) invert(1);}}
-  nav{{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}}
-  a{{color:#F7F3EA;text-decoration:none;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;
-     border:1.5px solid #F7F3EA;border-radius:100px;padding:14px 28px;}}
-  a:hover,a:focus-visible{{background:#7A4A2B;border-color:#7A4A2B;outline:none;}}
+  .sr-only{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}}
+  noscript a{{color:#F7F3EA;font:600 15px system-ui,sans-serif;margin:0 10px;}}
 </style>
 </head>
 <body>
   <img src="assets/img/logo-hero.png" alt="Coyhaique River Lodge">
-  <nav aria-label="Language">
+  <nav class="sr-only" aria-label="Language">
 {links}
   </nav>
+  <noscript><div style="position:fixed;bottom:40px;left:0;right:0;text-align:center">{links}</div></noscript>
 <script>
-  // Elige idioma: preferencia guardada > idioma del navegador > inglés
-  try {{
-    var saved = localStorage.getItem('crl_lang');
-    var pool = saved ? [saved] : (navigator.languages || [navigator.language || '']);
+  // Idioma: preferencia guardada > idioma del navegador > inglés
+  (function () {{
     var pick = null;
-    for (var i = 0; i < pool.length && !pick; i++) {{
-      var l = String(pool[i]).slice(0, 2).toLowerCase();
-      if (l === 'es' || l === 'en' || l === 'fr') pick = l;
-    }}
-    if (!/[?&]stay\\b/.test(location.search)) location.replace((pick || 'en') + '/');
-  }} catch (e) {{}}
+    try {{
+      var saved = localStorage.getItem('crl_lang');
+      var pool = saved ? [saved] : (navigator.languages || [navigator.language || '']);
+      for (var i = 0; i < pool.length && !pick; i++) {{
+        var l = String(pool[i]).slice(0, 2).toLowerCase();
+        if (l === 'es' || l === 'en' || l === 'fr') pick = l;
+      }}
+    }} catch (e) {{}}
+    location.replace((pick || 'en') + '/');
+  }})();
 </script>
 </body>
 </html>
@@ -478,9 +484,18 @@ def main():
     base = site["base_url"].rstrip("/")
     robots = "User-agent: *\nDisallow: /\n" if site.get("noindex") else f"User-agent: *\nAllow: /\n\nSitemap: {base}/sitemap.xml\n"
     (ROOT / "robots.txt").write_text(robots, encoding="utf-8")
+    # Selección automática de idioma en el servidor: cookie crl_lang > Accept-Language > inglés
+    redirects = [
+        {"source": "/", "has": [{"type": "cookie", "key": "crl_lang", "value": l}], "destination": f"/{l}/", "permanent": False}
+        for l in LANGS
+    ] + [
+        {"source": "/", "has": [{"type": "header", "key": "accept-language", "value": f"^{l}.*"}], "destination": f"/{l}/", "permanent": False}
+        for l in ("es", "fr")
+    ] + [{"source": "/", "destination": f"/{DEFAULT_LANG_FALLBACK}/", "permanent": False}]
     vercel = {
         "cleanUrls": True,
         "trailingSlash": True,
+        "redirects": redirects,
         "headers": [{"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=86400"}]}],
     }
     (ROOT / "vercel.json").write_text(json.dumps(vercel, indent=2) + "\n", encoding="utf-8")

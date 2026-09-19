@@ -11,11 +11,14 @@
     set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
 
-  /* ---------- Idioma elegido: se recuerda para la página raíz ---------- */
+  /* ---------- Idioma elegido a mano: se recuerda (localStorage + cookie leída por vercel.json) ---------- */
+  function rememberLang(l) {
+    store.set('crl_lang', l);
+    try { document.cookie = 'crl_lang=' + l + '; path=/; max-age=31536000; SameSite=Lax'; } catch (e) {}
+  }
   $$('.lang-switch a').forEach(function (a) {
-    a.addEventListener('click', function () { store.set('crl_lang', a.getAttribute('data-lang')); });
+    a.addEventListener('click', function () { rememberLang(a.getAttribute('data-lang')); });
   });
-  if (CFG.lang) store.set('crl_lang', CFG.lang);
 
   /* ---------- Header sólido al hacer scroll ---------- */
   var header = $('#siteHeader');
@@ -33,14 +36,24 @@
   $$('#mainNav a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 
-  /* ---------- Hero minimalista: se revela con clic, scroll, tecla o tras un breve lapso ---------- */
+  /* ---------- Hero minimalista ----------
+     El texto y el menú aparecen al FINAL del video (config: hero.reveal_on_video_end).
+     También se pueden saltar con clic, scroll, Tab o Enter. Si el video no puede reproducirse
+     (sin conexión, autoplay bloqueado, ahorro de datos, movimiento reducido) se revelan solos. */
   var hero = $('.hero');
+  var video = $('#heroVideo');
   var cueLogo = $('#heroCueLogo');
   var navLogoImg = $('.nav-logo img');
   var revealed = false;
+  var startGuard = null;
+
+  function reducedMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
   function revealSite() {
     if (revealed) return;
     revealed = true;
+    if (startGuard) clearTimeout(startGuard);
     try {
       if (cueLogo && navLogoImg && window.scrollY < 4 && !reducedMotion()) {
         cueLogo.style.animation = 'none';
@@ -57,56 +70,65 @@
       }
     } catch (e) {}
     document.body.classList.add('revealed');
+    // Una vez revelado el sitio, el video sigue en bucle de fondo
+    if (video) {
+      video.loop = true;
+      if (video.ended) { try { video.currentTime = 0; var p = video.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {} }
+    }
   }
-  function reducedMotion() {
-    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }
+  function revealLater(ms) { setTimeout(revealSite, ms); }
+
   if (hero) hero.addEventListener('click', revealSite);
   window.addEventListener('scroll', function () { if (window.scrollY > 4) revealSite(); }, { once: true, passive: true });
-  // Teclado: solo Tab, Enter o Espacio (no cualquier tecla), para no romper el hero por accidente
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Tab' || e.key === 'Enter' || e.key === ' ') revealSite();
   });
   if (window.location.hash && window.location.hash !== '#top') revealSite();
-  // Revelado automático: desactivado por defecto (0). Se configura en site.json -> hero.auto_reveal_ms
-  if (CFG.autoRevealMs > 0) setTimeout(revealSite, CFG.autoRevealMs);
+  if (CFG.autoRevealMs > 0) revealLater(CFG.autoRevealMs);      // tope opcional (0 = sin tope)
 
   /* ---------- Video del hero: mp4/webm > HLS > imagen fija ---------- */
-  var video = $('#heroVideo');
   function loadScript(src, ok, fail) {
     var s = document.createElement('script');
     s.src = src; s.async = true; s.onload = ok; s.onerror = fail;
     document.head.appendChild(s);
   }
   function startVideo() {
-    if (!video) return;
+    if (!video) { revealLater(CFG.noVideoRevealMs); return; }
     var saveData = navigator.connection && navigator.connection.saveData;
-    if (saveData || reducedMotion()) return;               // se queda la imagen fija
+    if (saveData || reducedMotion()) { revealLater(CFG.noVideoRevealMs); return; }   // solo imagen fija
     var mp4 = video.getAttribute('data-mp4');
     var webm = video.getAttribute('data-webm');
     var hls = video.getAttribute('data-hls');
+    var giveUp = function () { revealLater(CFG.noVideoRevealMs); };
+    video.loop = !CFG.revealOnVideoEnd;                    // si se espera el final, no hay bucle hasta revelar
     video.addEventListener('playing', function () { video.classList.add('playing'); });
-    var play = function () { var p = video.play(); if (p && p.catch) p.catch(function () {}); };
+    video.addEventListener('ended', function () { if (CFG.revealOnVideoEnd) revealSite(); });
+    video.addEventListener('error', giveUp);
+    // Si el video no arranca a tiempo (red lenta, flujo caído), no se deja al visitante esperando
+    startGuard = setTimeout(function () { if (!video.classList.contains('playing')) revealSite(); },
+                            CFG.videoStartTimeoutMs || 8000);
+    var play = function () { var p = video.play(); if (p && p.catch) p.catch(giveUp); };
     if (mp4 || webm) {
       if (webm) { var s1 = document.createElement('source'); s1.src = webm; s1.type = 'video/webm'; video.appendChild(s1); }
       if (mp4) { var s2 = document.createElement('source'); s2.src = mp4; s2.type = 'video/mp4'; video.appendChild(s2); }
       video.load(); play();
     } else if (hls) {
       if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = hls; play();                            // Safari / iOS: HLS nativo
+        video.src = hls; play();                            // Safari / iOS / Chrome reciente: HLS nativo
       } else {
-        // hls.js se carga ANTES de usarse (en la maqueta original se ejecutaba primero el código y fallaba)
         loadScript('https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.15/hls.min.js', function () {
-          if (!window.Hls || !window.Hls.isSupported()) return;
+          if (!window.Hls || !window.Hls.isSupported()) { giveUp(); return; }
           var h = new window.Hls();
-          h.on(window.Hls.Events.ERROR, function (ev, data) { if (data && data.fatal) { h.destroy(); } });
+          h.on(window.Hls.Events.ERROR, function (ev, data) { if (data && data.fatal) { h.destroy(); giveUp(); } });
           h.loadSource(hls); h.attachMedia(video); play();
-        }, function () {});
+        }, giveUp);
       }
+    } else {
+      giveUp();
     }
   }
-  if ('requestIdleCallback' in window) requestIdleCallback(startVideo, { timeout: 2000 });
-  else setTimeout(startVideo, 300);
+  if ('requestIdleCallback' in window) requestIdleCallback(startVideo, { timeout: 1500 });
+  else setTimeout(startVideo, 200);
 
   /* ---------- Disponibilidad: filtro por programa ---------- */
   var filters = $$('.filter-btn');

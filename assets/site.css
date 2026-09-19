@@ -78,6 +78,7 @@ nav.links a:hover{color:#E8D9BE;}
 header.solid nav.links a:hover{color:var(--terracotta-dark);}
 .nav-cta{display:flex;align-items:center;gap:12px;flex-shrink:0;}
 .lang-switch{display:flex;align-items:center;gap:2px;}
+.lang-switch[hidden]{display:none !important;}
 .lang-switch a{
   font-size:12px;font-weight:700;letter-spacing:0.06em;padding:6px 8px;border-radius:6px;
   color:rgba(255,255,255,0.75);transition:color .25s ease, background .25s ease;
