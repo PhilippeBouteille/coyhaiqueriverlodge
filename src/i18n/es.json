@@ -1,0 +1,269 @@
+{
+  "lang_name": "Español",
+  "meta": {
+    "title": "Coyhaique River Lodge — Pesca con mosca y aventura en Aysén, Patagonia",
+    "description": "Lodge de pesca con mosca y aventura a orillas del río Coyhaique, Patagonia chilena. Programas todo incluido, guías bilingües, cocina de temporada y disponibilidad 2026-2027.",
+    "og_locale": "es_CL",
+    "og_image_alt": "Pescador sosteniendo una trucha en un río de la Patagonia chilena"
+  },
+  "ui": {
+    "skip": "Saltar al contenido",
+    "menu": "Menú",
+    "reveal": "Entrar al sitio",
+    "mockup": "Maqueta — no publicado",
+    "contact": "Contacto",
+    "lang_label": "Idioma",
+    "whatsapp": "Escríbenos por WhatsApp"
+  },
+  "nav": [
+    { "href": "#history", "label": "Historia" },
+    { "href": "#lodges", "label": "Lodges" },
+    { "href": "#programs", "label": "Programas" },
+    { "href": "#availability", "label": "Disponibilidad" },
+    { "href": "#cuisine", "label": "Gastronomía" },
+    { "href": "#team", "label": "Equipo" }
+  ],
+  "hero": {
+    "badge": "Coyhaique River Lodge · Patagonia chilena · Aysén",
+    "h1": "Pesca con mosca y aventura en el corazón de Aysén.",
+    "lead": "Lodge a orillas del río Coyhaique: programas todo incluido, guías bilingües, tres propiedades y cocina de temporada.",
+    "cta1": "Ver disponibilidad 2026-2027",
+    "cta2": "Contáctanos",
+    "scroll": "Scroll"
+  },
+  "pillars": [
+    {
+      "icon": "bed",
+      "title": "Alojamiento",
+      "text": "Tres propiedades en Aysén: el lodge principal, Las Ardillas y las cabañas de Puerto Sánchez.",
+      "href": "#lodges"
+    },
+    {
+      "icon": "fish",
+      "title": "Pesca y aventura",
+      "text": "Pesca con mosca y multiaventura con guías bilingües, en ríos, lagos y montañas de la región.",
+      "href": "#programs"
+    },
+    {
+      "icon": "utensils",
+      "title": "Gastronomía y nutrición",
+      "text": "Cocina de temporada y una alimentación pensada para las jornadas largas al aire libre.",
+      "href": "#cuisine"
+    }
+  ],
+  "stats": [
+    { "value": "20+", "label": "Años de trayectoria" },
+    { "value": "3", "label": "Propiedades en Aysén" },
+    { "value": "10", "label": "Huéspedes máx. por semana" },
+    { "value": "1 : 2–4", "label": "Un guía cada 2 a 4 huéspedes" }
+  ],
+  "welcome": {
+    "eyebrow": "Bienvenido",
+    "title": "Donde la pasión se encuentra con la naturaleza patagónica.",
+    "body": "Enclavado en 16 hectáreas (40 acres), a 8 km de Coyhaique y a orillas del río Coyhaique, tu viaje se despliega sobre un telón de esplendor natural: un refugio para pescadores y amantes de la naturaleza por igual.",
+    "cta": "Conoce a nuestro equipo",
+    "img_alt": "Pescador con mosca junto a una cascada en un río de Aysén"
+  },
+  "history": {
+    "eyebrow": "Nuestra historia",
+    "title": "Más de dos décadas construyendo una tradición patagónica.",
+    "p1": "Coyhaique River Lodge nació de una convicción simple: que la Patagonia se vive mejor de cerca, con tiempo, y con quienes conocen sus ríos, sus bosques y sus estaciones desde hace generaciones. Dos décadas después, esa misma convicción sigue guiando cada temporada, cada itinerario y cada huésped que llega buscando algo más que unas vacaciones.",
+    "p2": "[Espacio reservado — hitos reales de la trayectoria: año de fundación, evolución del lodge, momentos clave, reconocimientos recibidos.]"
+  },
+  "lodges": {
+    "eyebrow": "Nuestras propiedades",
+    "title": "Tres formas de vivir la Patagonia.",
+    "intro": "Cada propiedad tiene su carácter. Elige una, o combínalas en un mismo viaje.",
+    "items": [
+      {
+        "tag": "Lodge principal",
+        "name": "Coyhaique River Lodge",
+        "text": "[Descripción: capacidad, estilo de habitaciones, ubicación exacta a orillas del río Coyhaique.]",
+        "img_alt": "Letrero de Coyhaique River Lodge en la entrada del lodge principal"
+      },
+      {
+        "tag": "Segunda propiedad",
+        "name": "Las Ardillas",
+        "text": "[Descripción: qué la distingue del lodge principal, capacidad, tipo de experiencia.]",
+        "img_alt": "Vista aérea de un lodge entre bosque y praderas con montañas al fondo"
+      },
+      {
+        "tag": "Tercera propiedad",
+        "name": "Cabañas Puerto Sánchez",
+        "text": "[Descripción: ubicación en Puerto Sánchez, tipo de cabañas, actividades asociadas al lago.]",
+        "img_alt": "Dos pescadores en un bote sobre un lago turquesa rodeado de montañas"
+      }
+    ]
+  },
+  "programs": {
+    "eyebrow": "Programas",
+    "title": "Programas de pesca y aventura, todo incluido.",
+    "intro": "Elige un programa y consulta las fechas disponibles. También armamos itinerarios a medida.",
+    "price_from": "Desde USD {price} por persona",
+    "price_tbc": "Precio por confirmar",
+    "includes": "Incluye",
+    "cta": "Solicitar este programa",
+    "nights_range": "{min} a {max} noches",
+    "nights_from_one": "Desde {min} noche",
+    "nights_from_many": "Desde {min} noches",
+    "items": {
+      "multi": {
+        "name": "Multiaventura",
+        "desc": "Trekking, kayak, bicicleta, cabalgata y pesca en un mismo viaje, con guías de montaña y de pesca.",
+        "includes": ["Alojamiento y alimentación", "Guías bilingües", "Actividades del programa", "[Traslados y equipo: por confirmar]"]
+      },
+      "pesca": {
+        "name": "Pesca con mosca",
+        "desc": "Programas dedicados a los ríos y lagos de Aysén, con guías que conocen cada tramo.",
+        "includes": ["Alojamiento y alimentación", "Guías de pesca bilingües", "Jornadas de pesca guiadas", "[Traslados y licencia: por confirmar]"]
+      },
+      "aloja": {
+        "name": "Alojamiento",
+        "desc": "Estadías flexibles en cualquiera de nuestras tres propiedades, en temporada alta y baja.",
+        "includes": ["Alojamiento", "Desayuno", "[Otras comidas y actividades: por confirmar]"]
+      }
+    }
+  },
+  "availability": {
+    "eyebrow": "Disponibilidad",
+    "title": "Temporada {season}: fechas y cupos.",
+    "intro": "Los cupos son limitados: recibimos como máximo 10 huéspedes por semana. Elige una salida y te enviamos la propuesta.",
+    "sample_note": "Datos de ejemplo — reemplazar por la disponibilidad real (src/data/site.json).",
+    "updated": "Actualizado el {date}",
+    "all": "Todos",
+    "col_program": "Programa",
+    "col_dates": "Fechas",
+    "col_nights": "Duración",
+    "col_spots": "Cupos",
+    "col_status": "Estado",
+    "nights_n": "{n} noches",
+    "nights_1": "1 noche",
+    "spots_n": "{n} cupos",
+    "spots_1": "1 cupo",
+    "spots_0": "Sin cupos",
+    "status": { "available": "Disponible", "few": "Últimos cupos", "full": "Completo" },
+    "cta_ask": "Consultar",
+    "cta_wait": "Lista de espera",
+    "lodging_note": "Alojamiento y programas a medida: consúltanos las fechas que buscas.",
+    "months": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+    "date_same_month": "{d1}–{d2} {m} {y}",
+    "date_same_year": "{d1} {m1} – {d2} {m2} {y}",
+    "date_diff_year": "{d1} {m1} {y1} – {d2} {m2} {y2}",
+    "date_single": "{d} {m} {y}"
+  },
+  "gastro": {
+    "eyebrow": "Gastronomía y nutrición",
+    "title": "Cocina patagónica y energía para toda la jornada.",
+    "body": "En CRL la mesa es parte del programa. Trabajamos con productos de temporada y de la región de Aysén, y cada menú se piensa para acompañar días largos al aire libre: platos completos, buena hidratación y colaciones para el río, la montaña o el lago.",
+    "items": [
+      {
+        "icon": "leaf",
+        "title": "Productos de Aysén",
+        "text": "Ingredientes de la región y de la temporada, cocinados con técnica y sin artificios. [Nombrar productores y platos reales.]"
+      },
+      {
+        "icon": "bolt",
+        "title": "Nutrición para la jornada",
+        "text": "Desayunos que sostienen, almuerzos de terreno (picnic o caja) y colaciones para mantener energía y concentración durante horas de pesca, trekking o cabalgata."
+      },
+      {
+        "icon": "heart",
+        "title": "Regímenes y alergias",
+        "text": "Vegetariano, vegano, sin gluten u otras necesidades: cuéntanos al reservar y lo integramos al menú de tu estadía."
+      },
+      {
+        "icon": "glass",
+        "title": "La mesa al final del día",
+        "text": "La cena cierra la jornada: mesa compartida, vinos chilenos y tiempo para contar el día. [Validar carta de bebidas.]"
+      }
+    ],
+    "photo_note": "[Foto de cocina o mesa — reemplazar]",
+    "draft_note": "Borrador de contenido — validar con cocina y dirección (productores, menús, regímenes, bebidas)."
+  },
+  "team": {
+    "eyebrow": "Equipo y guías",
+    "title": "Los rostros detrás de cada expedición.",
+    "intro": "Cada salida a terreno está a cargo de guías bilingües con años de experiencia en los ríos y montañas de Aysén. [Reemplazar con fotos y biografías reales del equipo.]",
+    "items": [
+      { "name": "[Nombre del fundador]", "role": "Fundador y director", "bio": "[Bio breve — trayectoria, por qué fundó CRL, años en la región.]" },
+      { "name": "[Nombre]", "role": "Guía senior de pesca", "bio": "[Años de experiencia, ríos de especialidad, certificaciones.]" },
+      { "name": "[Nombre]", "role": "Guía de montaña", "bio": "[Certificaciones de montaña, especialidad en trekking y cabalgata.]" },
+      { "name": "[Nombre]", "role": "Chef de lodge", "bio": "[Formación, enfoque de cocina patagónica y de temporada.]" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonios",
+    "title": "Lo que dicen quienes ya vivieron la experiencia.",
+    "intro": "[Reemplazar por reseñas reales de Google, TripAdvisor o correos de huéspedes, con su permiso.]",
+    "placeholder": "Marcador de posición",
+    "items": [
+      { "quote": "[Testimonio real de huésped.]", "who": "[Nombre del huésped]", "meta": "[País de origen · mes/año]" },
+      { "quote": "[Testimonio real — enfocado en la experiencia de pesca o los guías.]", "who": "[Nombre del huésped]", "meta": "[País de origen · mes/año]" },
+      { "quote": "[Testimonio real — enfocado en el lodge o la gastronomía.]", "who": "[Nombre del huésped]", "meta": "[País de origen · mes/año]" }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Galería",
+    "title": "Momentos destacados.",
+    "alts": [
+      "Pescador remando un bote inflable azul por un río de aguas claras entre bosques",
+      "Trucha marrón sostenida en el agua junto a una caña de pescar",
+      "Trucha arcoíris con sus manchas visibles, sostenida sobre el agua",
+      "Trucha bajo el agua justo antes de ser liberada",
+      "Dos pescadores en un bote junto a la orilla rocosa de un río",
+      "Bote en un río tranquilo entre bosque, con el cielo reflejado en el agua",
+      "Pescador junto a una cascada en un río de Aysén",
+      "Pescador en la orilla de un lago con montañas nevadas al fondo"
+    ],
+    "open": "Abrir imagen en tamaño completo"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Cuéntanos qué viaje tienes en mente.",
+    "intro": "Respondemos en español, inglés o francés. Si viste una salida disponible, elígela arriba y el formulario se completa solo.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono o WhatsApp (opcional)",
+      "reply_lang": "Idioma de respuesta",
+      "program": "Programa",
+      "program_any": "Aún no lo sé",
+      "arrival": "Llegada",
+      "departure": "Salida",
+      "guests": "Número de personas",
+      "message": "Mensaje",
+      "message_ph": "Fechas alternativas, nivel de experiencia, regímenes alimentarios, ocasión especial…",
+      "consent": "Acepto que CRL use estos datos para responder mi consulta.",
+      "submit": "Enviar consulta",
+      "sending": "Enviando…",
+      "success": "Gracias. Recibimos tu consulta y te respondemos pronto.",
+      "error": "No pudimos enviar el formulario. Escríbenos por WhatsApp o a {email}.",
+      "mailto": "Abriendo tu programa de correo con la consulta lista para enviar…",
+      "slot_selected": "Salida elegida"
+    },
+    "info_title": "Escríbenos directamente",
+    "address_label": "Cómo llegar"
+  },
+  "footer": {
+    "tagline": "Lodge de pesca con mosca y aventura en el corazón de la Patagonia chilena — Aysén, Coyhaique.",
+    "contact": "Contacto",
+    "explore": "Explora",
+    "follow": "Síguenos",
+    "explore_links": [
+      { "href": "#history", "label": "Nuestra historia" },
+      { "href": "#lodges", "label": "Nuestros lodges" },
+      { "href": "#programs", "label": "Programas" },
+      { "href": "#availability", "label": "Disponibilidad" },
+      { "href": "#cuisine", "label": "Gastronomía y nutrición" }
+    ],
+    "whatsapp_direct": "WhatsApp directo →",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones",
+    "rights": "© 2026 Coyhaique River Lodge"
+  },
+  "cookie": {
+    "text": "<strong>Usamos cookies.</strong> Este sitio usa cookies esenciales para funcionar y, solo si lo aceptas, cookies de medición anónima.",
+    "reject": "Rechazar",
+    "accept": "Aceptar todo"
+  }
+}

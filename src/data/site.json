@@ -1,0 +1,55 @@
+{
+  "_lisez-moi": "Données NEUTRES (indépendantes de la langue). Les textes traduits sont dans src/i18n/{es,en,fr}.json. Après modification: python3 build.py",
+
+  "base_url": "https://coyhaiqueriverlodge.com",
+  "noindex": true,
+  "_noindex": "true = maqueta: meta noindex + robots.txt Disallow. Passer à false au lancement.",
+
+  "contact": {
+    "email": "info@coyhaiqueriverlodge.com",
+    "phone_display": "+569 4221 9688",
+    "phone_tel": "+56942219688",
+    "whatsapp": "56942219688",
+    "street": "Camino a Coyhaique Alto Km 8,5",
+    "locality": "Coyhaique",
+    "region": "Región de Aysén",
+    "country": "CL",
+    "instagram": "",
+    "google_reviews": "",
+    "tripadvisor": ""
+  },
+
+  "form_endpoint": "",
+  "_form_endpoint": "URL qui reçoit le POST JSON du formulaire (Supabase Edge Function, Formspree...). Vide = repli mailto vers contact.email.",
+
+  "hero": {
+    "mp4": "",
+    "webm": "",
+    "hls": "https://coyhaiqueriverlodge.com/media/videos/12/master.m3u8",
+    "_note": "Ordre: mp4/webm (recommandé: boucle de 5-10 Mo) > hls > image fixe. Poser le fichier dans assets/video/ et écrire ici 'assets/video/hero.mp4' (le build ajoute le préfixe ../)."
+  },
+
+  "programs": [
+    { "id": "multi", "nights_min": 4, "nights_max": 7, "price_from_usd": null },
+    { "id": "pesca", "nights_min": 3, "nights_max": 7, "price_from_usd": null },
+    { "id": "aloja", "nights_min": 1, "nights_max": null, "price_from_usd": null }
+  ],
+
+  "availability": {
+    "season": "2026-2027",
+    "sample": true,
+    "updated": "2026-09-19",
+    "_note": "sample=true affiche un bandeau 'données d'exemple'. Statut calculé: spots=0 complet, 1-2 derniers cupos, sinon disponible (forcer avec \"status\").",
+    "slots": [
+      { "program": "pesca", "start": "2026-11-08", "end": "2026-11-15", "spots": 6 },
+      { "program": "pesca", "start": "2026-11-22", "end": "2026-11-29", "spots": 2 },
+      { "program": "pesca", "start": "2026-12-06", "end": "2026-12-13", "spots": 0 },
+      { "program": "pesca", "start": "2026-12-20", "end": "2026-12-27", "spots": 4 },
+      { "program": "pesca", "start": "2027-01-10", "end": "2027-01-17", "spots": 3 },
+      { "program": "multi", "start": "2026-11-15", "end": "2026-11-20", "spots": 5 },
+      { "program": "multi", "start": "2026-12-13", "end": "2026-12-20", "spots": 1 },
+      { "program": "multi", "start": "2027-01-24", "end": "2027-01-31", "spots": 6 },
+      { "program": "multi", "start": "2027-02-14", "end": "2027-02-19", "spots": 4 }
+    ]
+  }
+}

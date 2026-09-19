@@ -1,0 +1,269 @@
+{
+  "lang_name": "Français",
+  "meta": {
+    "title": "Coyhaique River Lodge — Pêche à la mouche et aventure en Aysén, Patagonie",
+    "description": "Lodge de pêche à la mouche et d'aventure au bord du río Coyhaique, en Patagonie chilienne. Programmes tout inclus, guides bilingues, cuisine de saison et disponibilités 2026-2027.",
+    "og_locale": "fr_FR",
+    "og_image_alt": "Pêcheur tenant une truite dans une rivière de la Patagonie chilienne"
+  },
+  "ui": {
+    "skip": "Aller au contenu",
+    "menu": "Menu",
+    "reveal": "Entrer sur le site",
+    "mockup": "Maquette — non publiée",
+    "contact": "Contact",
+    "lang_label": "Langue",
+    "whatsapp": "Nous écrire sur WhatsApp"
+  },
+  "nav": [
+    { "href": "#history", "label": "Histoire" },
+    { "href": "#lodges", "label": "Lodges" },
+    { "href": "#programs", "label": "Programmes" },
+    { "href": "#availability", "label": "Disponibilités" },
+    { "href": "#cuisine", "label": "Gastronomie" },
+    { "href": "#team", "label": "Équipe" }
+  ],
+  "hero": {
+    "badge": "Coyhaique River Lodge · Patagonie chilienne · Aysén",
+    "h1": "Pêche à la mouche et aventure au cœur d'Aysén.",
+    "lead": "Un lodge au bord du río Coyhaique : programmes tout inclus, guides bilingues, trois propriétés et cuisine de saison.",
+    "cta1": "Voir les disponibilités 2026-2027",
+    "cta2": "Nous contacter",
+    "scroll": "Défiler"
+  },
+  "pillars": [
+    {
+      "icon": "bed",
+      "title": "Hébergement",
+      "text": "Trois propriétés en Aysén : le lodge principal, Las Ardillas et les cabañas de Puerto Sánchez.",
+      "href": "#lodges"
+    },
+    {
+      "icon": "fish",
+      "title": "Pêche et aventure",
+      "text": "Pêche à la mouche et multi-aventure avec des guides bilingues, sur les rivières, lacs et montagnes de la région.",
+      "href": "#programs"
+    },
+    {
+      "icon": "utensils",
+      "title": "Gastronomie et nutrition",
+      "text": "Une cuisine de saison et une alimentation pensée pour les longues journées en plein air.",
+      "href": "#cuisine"
+    }
+  ],
+  "stats": [
+    { "value": "20+", "label": "Ans d'expérience" },
+    { "value": "3", "label": "Propriétés en Aysén" },
+    { "value": "10", "label": "Hôtes max. par semaine" },
+    { "value": "1 : 2–4", "label": "Un guide pour 2 à 4 hôtes" }
+  ],
+  "welcome": {
+    "eyebrow": "Bienvenue",
+    "title": "Là où la passion rencontre la nature patagonne.",
+    "body": "Niché sur 16 hectares (40 acres), à 8 km de Coyhaique et au bord du río Coyhaique, votre voyage se déploie dans un décor naturel splendide : un refuge pour les pêcheurs comme pour les amoureux de la nature.",
+    "cta": "Rencontrer l'équipe",
+    "img_alt": "Pêcheur à la mouche près d'une cascade sur une rivière d'Aysén"
+  },
+  "history": {
+    "eyebrow": "Notre histoire",
+    "title": "Plus de vingt ans à bâtir une tradition patagonne.",
+    "p1": "Coyhaique River Lodge est né d'une conviction simple : la Patagonie se vit mieux de près, en prenant le temps, avec ceux qui connaissent ses rivières, ses forêts et ses saisons depuis des générations. Vingt ans plus tard, cette même conviction guide chaque saison, chaque itinéraire et chaque hôte venu chercher plus que des vacances.",
+    "p2": "[Espace réservé — jalons réels : année de fondation, évolution du lodge, moments clés, distinctions reçues.]"
+  },
+  "lodges": {
+    "eyebrow": "Nos propriétés",
+    "title": "Trois façons de vivre la Patagonie.",
+    "intro": "Chaque propriété a son caractère. Choisissez-en une, ou combinez-les dans un même voyage.",
+    "items": [
+      {
+        "tag": "Lodge principal",
+        "name": "Coyhaique River Lodge",
+        "text": "[Description : capacité, style des chambres, emplacement exact au bord du río Coyhaique.]",
+        "img_alt": "Enseigne de Coyhaique River Lodge à l'entrée du lodge principal"
+      },
+      {
+        "tag": "Deuxième propriété",
+        "name": "Las Ardillas",
+        "text": "[Description : ce qui la distingue du lodge principal, capacité, type d'expérience.]",
+        "img_alt": "Vue aérienne d'un lodge entre forêt et prairies, avec des montagnes au fond"
+      },
+      {
+        "tag": "Troisième propriété",
+        "name": "Cabañas Puerto Sánchez",
+        "text": "[Description : situation à Puerto Sánchez, type de cabañas, activités liées au lac.]",
+        "img_alt": "Deux pêcheurs dans un bateau sur un lac turquoise entouré de montagnes"
+      }
+    ]
+  },
+  "programs": {
+    "eyebrow": "Programmes",
+    "title": "Programmes de pêche et d'aventure, tout inclus.",
+    "intro": "Choisissez un programme et consultez les dates disponibles. Nous construisons aussi des itinéraires sur mesure.",
+    "price_from": "À partir de {price} USD par personne",
+    "price_tbc": "Prix à confirmer",
+    "includes": "Comprend",
+    "cta": "Demander ce programme",
+    "nights_range": "{min} à {max} nuits",
+    "nights_from_one": "Dès {min} nuit",
+    "nights_from_many": "Dès {min} nuits",
+    "items": {
+      "multi": {
+        "name": "Multi-aventure",
+        "desc": "Trek, kayak, vélo, cheval et pêche dans un même voyage, avec des guides de montagne et de pêche.",
+        "includes": ["Hébergement et repas", "Guides bilingues", "Activités du programme", "[Transferts et matériel : à confirmer]"]
+      },
+      "pesca": {
+        "name": "Pêche à la mouche",
+        "desc": "Des programmes dédiés aux rivières et lacs d'Aysén, avec des guides qui connaissent chaque passe.",
+        "includes": ["Hébergement et repas", "Guides de pêche bilingues", "Journées de pêche guidées", "[Transferts et permis : à confirmer]"]
+      },
+      "aloja": {
+        "name": "Hébergement",
+        "desc": "Séjours flexibles dans l'une de nos trois propriétés, en haute comme en basse saison.",
+        "includes": ["Hébergement", "Petit-déjeuner", "[Autres repas et activités : à confirmer]"]
+      }
+    }
+  },
+  "availability": {
+    "eyebrow": "Disponibilités",
+    "title": "Saison {season} : dates et places.",
+    "intro": "Les places sont limitées : nous accueillons au maximum 10 hôtes par semaine. Choisissez un départ et nous vous envoyons une proposition.",
+    "sample_note": "Données d'exemple — à remplacer par les disponibilités réelles (src/data/site.json).",
+    "updated": "Mis à jour le {date}",
+    "all": "Tous",
+    "col_program": "Programme",
+    "col_dates": "Dates",
+    "col_nights": "Durée",
+    "col_spots": "Places",
+    "col_status": "Statut",
+    "nights_n": "{n} nuits",
+    "nights_1": "1 nuit",
+    "spots_n": "{n} places",
+    "spots_1": "1 place",
+    "spots_0": "Aucune place",
+    "status": { "available": "Disponible", "few": "Dernières places", "full": "Complet" },
+    "cta_ask": "Demander",
+    "cta_wait": "Liste d'attente",
+    "lodging_note": "Hébergement et programmes sur mesure : indiquez-nous les dates souhaitées.",
+    "months": ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
+    "date_same_month": "{d1}–{d2} {m} {y}",
+    "date_same_year": "{d1} {m1} – {d2} {m2} {y}",
+    "date_diff_year": "{d1} {m1} {y1} – {d2} {m2} {y2}",
+    "date_single": "{d} {m} {y}"
+  },
+  "gastro": {
+    "eyebrow": "Gastronomie et nutrition",
+    "title": "Cuisine patagonne et énergie pour toute la journée.",
+    "body": "Chez CRL, la table fait partie du programme. Nous travaillons avec des produits de saison de la région d'Aysén, et chaque menu est pensé pour accompagner de longues journées en plein air : plats complets, bonne hydratation et en-cas pour la rivière, la montagne ou le lac.",
+    "items": [
+      {
+        "icon": "leaf",
+        "title": "Produits d'Aysén",
+        "text": "Des ingrédients de la région et de la saison, cuisinés avec technique et sans artifice. [Nommer les producteurs et plats réels.]"
+      },
+      {
+        "icon": "bolt",
+        "title": "Nutrition pour la journée",
+        "text": "Des petits-déjeuners qui tiennent, des déjeuners de terrain (pique-nique ou panier) et des en-cas pour garder énergie et concentration pendant des heures de pêche, de trek ou de cheval."
+      },
+      {
+        "icon": "heart",
+        "title": "Régimes et allergies",
+        "text": "Végétarien, végan, sans gluten ou autres besoins : dites-le-nous à la réservation et nous l'intégrons au menu de votre séjour."
+      },
+      {
+        "icon": "glass",
+        "title": "La table en fin de journée",
+        "text": "Le dîner clôt la journée : table partagée, vins chiliens et temps pour raconter la journée. [Valider la carte des boissons.]"
+      }
+    ],
+    "photo_note": "[Photo de cuisine ou de table — à remplacer]",
+    "draft_note": "Contenu provisoire — à valider avec la cuisine et la direction (producteurs, menus, régimes, boissons)."
+  },
+  "team": {
+    "eyebrow": "Équipe et guides",
+    "title": "Les visages derrière chaque expédition.",
+    "intro": "Chaque sortie est encadrée par des guides bilingues forts de nombreuses années d'expérience sur les rivières et montagnes d'Aysén. [Remplacer par de vraies photos et biographies.]",
+    "items": [
+      { "name": "[Nom du fondateur]", "role": "Fondateur et directeur", "bio": "[Courte bio — parcours, pourquoi il a fondé CRL, années dans la région.]" },
+      { "name": "[Nom]", "role": "Guide de pêche senior", "bio": "[Années d'expérience, rivières de prédilection, certifications.]" },
+      { "name": "[Nom]", "role": "Guide de montagne", "bio": "[Certifications de montagne, spécialité trek et cheval.]" },
+      { "name": "[Nom]", "role": "Chef du lodge", "bio": "[Formation, approche de la cuisine patagonne et de saison.]" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "Ce que disent ceux qui ont vécu l'expérience.",
+    "intro": "[Remplacer par de vrais avis Google, TripAdvisor ou e-mails d'hôtes, avec leur accord.]",
+    "placeholder": "Emplacement provisoire",
+    "items": [
+      { "quote": "[Vrai témoignage d'hôte.]", "who": "[Nom de l'hôte]", "meta": "[Pays · mois/année]" },
+      { "quote": "[Vrai témoignage — sur l'expérience de pêche ou les guides.]", "who": "[Nom de l'hôte]", "meta": "[Pays · mois/année]" },
+      { "quote": "[Vrai témoignage — sur le lodge ou la cuisine.]", "who": "[Nom de l'hôte]", "meta": "[Pays · mois/année]" }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Galerie",
+    "title": "Moments forts.",
+    "alts": [
+      "Pêcheur ramant sur un bateau pneumatique bleu dans une rivière claire entre les forêts",
+      "Truite fario tenue dans l'eau près d'une canne à pêche",
+      "Truite arc-en-ciel aux mouchetures visibles, tenue au-dessus de l'eau",
+      "Truite sous l'eau juste avant d'être relâchée",
+      "Deux pêcheurs dans un bateau près de la rive rocheuse d'une rivière",
+      "Bateau sur une rivière calme entre les arbres, ciel reflété dans l'eau",
+      "Pêcheur près d'une cascade sur une rivière d'Aysén",
+      "Pêcheur sur la rive d'un lac avec des montagnes enneigées au fond"
+    ],
+    "open": "Ouvrir l'image en taille réelle"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Parlez-nous du voyage que vous imaginez.",
+    "intro": "Nous répondons en espagnol, en anglais ou en français. Si vous avez repéré un départ disponible plus haut, choisissez-le et le formulaire se remplit tout seul.",
+    "form": {
+      "name": "Nom",
+      "email": "E-mail",
+      "phone": "Téléphone ou WhatsApp (facultatif)",
+      "reply_lang": "Langue de réponse",
+      "program": "Programme",
+      "program_any": "Je ne sais pas encore",
+      "arrival": "Arrivée",
+      "departure": "Départ",
+      "guests": "Nombre de personnes",
+      "message": "Message",
+      "message_ph": "Dates alternatives, niveau d'expérience, régimes alimentaires, occasion spéciale…",
+      "consent": "J'accepte que CRL utilise ces informations pour répondre à ma demande.",
+      "submit": "Envoyer la demande",
+      "sending": "Envoi…",
+      "success": "Merci. Nous avons bien reçu votre demande et vous répondrons rapidement.",
+      "error": "Nous n'avons pas pu envoyer le formulaire. Écrivez-nous sur WhatsApp ou à {email}.",
+      "mailto": "Ouverture de votre messagerie avec la demande prête à envoyer…",
+      "slot_selected": "Départ choisi"
+    },
+    "info_title": "Nous joindre directement",
+    "address_label": "Comment venir"
+  },
+  "footer": {
+    "tagline": "Lodge de pêche à la mouche et d'aventure au cœur de la Patagonie chilienne — Aysén, Coyhaique.",
+    "contact": "Contact",
+    "explore": "Explorer",
+    "follow": "Suivez-nous",
+    "explore_links": [
+      { "href": "#history", "label": "Notre histoire" },
+      { "href": "#lodges", "label": "Nos lodges" },
+      { "href": "#programs", "label": "Programmes" },
+      { "href": "#availability", "label": "Disponibilités" },
+      { "href": "#cuisine", "label": "Gastronomie et nutrition" }
+    ],
+    "whatsapp_direct": "WhatsApp direct →",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions générales",
+    "rights": "© 2026 Coyhaique River Lodge"
+  },
+  "cookie": {
+    "text": "<strong>Nous utilisons des cookies.</strong> Ce site utilise des cookies essentiels à son fonctionnement et, uniquement si vous l'acceptez, des cookies de mesure d'audience anonymes.",
+    "reject": "Refuser",
+    "accept": "Tout accepter"
+  }
+}

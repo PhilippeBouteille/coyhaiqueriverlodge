@@ -1,0 +1,269 @@
+{
+  "lang_name": "English",
+  "meta": {
+    "title": "Coyhaique River Lodge — Fly fishing and adventure in Aysén, Patagonia",
+    "description": "Fly fishing and adventure lodge on the banks of the Coyhaique River, Chilean Patagonia. All-inclusive programs, bilingual guides, seasonal cuisine and 2026-2027 availability.",
+    "og_locale": "en_US",
+    "og_image_alt": "Angler holding a trout in a river in Chilean Patagonia"
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "reveal": "Enter the site",
+    "mockup": "Mockup — not published",
+    "contact": "Contact",
+    "lang_label": "Language",
+    "whatsapp": "Message us on WhatsApp"
+  },
+  "nav": [
+    { "href": "#history", "label": "History" },
+    { "href": "#lodges", "label": "Lodges" },
+    { "href": "#programs", "label": "Programs" },
+    { "href": "#availability", "label": "Availability" },
+    { "href": "#cuisine", "label": "Cuisine" },
+    { "href": "#team", "label": "Team" }
+  ],
+  "hero": {
+    "badge": "Coyhaique River Lodge · Chilean Patagonia · Aysén",
+    "h1": "Fly fishing and adventure in the heart of Aysén.",
+    "lead": "A lodge on the banks of the Coyhaique River: all-inclusive programs, bilingual guides, three properties and seasonal cuisine.",
+    "cta1": "See 2026-2027 availability",
+    "cta2": "Contact us",
+    "scroll": "Scroll"
+  },
+  "pillars": [
+    {
+      "icon": "bed",
+      "title": "Lodging",
+      "text": "Three properties in Aysén: the main lodge, Las Ardillas and the Puerto Sánchez cabins.",
+      "href": "#lodges"
+    },
+    {
+      "icon": "fish",
+      "title": "Fishing and adventure",
+      "text": "Fly fishing and multi-adventure trips with bilingual guides, on the region's rivers, lakes and mountains.",
+      "href": "#programs"
+    },
+    {
+      "icon": "utensils",
+      "title": "Cuisine and nutrition",
+      "text": "Seasonal cooking and food designed for long days outdoors.",
+      "href": "#cuisine"
+    }
+  ],
+  "stats": [
+    { "value": "20+", "label": "Years of experience" },
+    { "value": "3", "label": "Properties in Aysén" },
+    { "value": "10", "label": "Guests max. per week" },
+    { "value": "1 : 2–4", "label": "One guide per 2 to 4 guests" }
+  ],
+  "welcome": {
+    "eyebrow": "Welcome",
+    "title": "Where passion meets Patagonian nature.",
+    "body": "Set on 40 acres (16 hectares), 5 miles (8 km) from Coyhaique and on the banks of the Coyhaique River, your trip unfolds against a backdrop of natural splendor: a refuge for anglers and nature lovers alike.",
+    "cta": "Meet our team",
+    "img_alt": "Fly angler beside a waterfall on a river in Aysén"
+  },
+  "history": {
+    "eyebrow": "Our story",
+    "title": "More than two decades building a Patagonian tradition.",
+    "p1": "Coyhaique River Lodge was born from a simple conviction: Patagonia is best experienced up close, unhurried, and with people who have known its rivers, forests and seasons for generations. Two decades later, that same conviction still guides every season, every itinerary and every guest who arrives looking for more than a vacation.",
+    "p2": "[Placeholder — real milestones: founding year, how the lodge evolved, key moments, awards received.]"
+  },
+  "lodges": {
+    "eyebrow": "Our properties",
+    "title": "Three ways to live Patagonia.",
+    "intro": "Each property has its own character. Choose one, or combine them in a single trip.",
+    "items": [
+      {
+        "tag": "Main lodge",
+        "name": "Coyhaique River Lodge",
+        "text": "[Description: capacity, room style, exact location on the banks of the Coyhaique River.]",
+        "img_alt": "Coyhaique River Lodge sign at the entrance of the main lodge"
+      },
+      {
+        "tag": "Second property",
+        "name": "Las Ardillas",
+        "text": "[Description: what sets it apart from the main lodge, capacity, type of experience.]",
+        "img_alt": "Aerial view of a lodge among forest and meadows with mountains behind"
+      },
+      {
+        "tag": "Third property",
+        "name": "Puerto Sánchez Cabins",
+        "text": "[Description: location in Puerto Sánchez, type of cabins, lake activities.]",
+        "img_alt": "Two anglers in a boat on a turquoise lake surrounded by mountains"
+      }
+    ]
+  },
+  "programs": {
+    "eyebrow": "Programs",
+    "title": "All-inclusive fishing and adventure programs.",
+    "intro": "Choose a program and check the available dates. We also build custom itineraries.",
+    "price_from": "From USD {price} per person",
+    "price_tbc": "Price to be confirmed",
+    "includes": "Includes",
+    "cta": "Request this program",
+    "nights_range": "{min} to {max} nights",
+    "nights_from_one": "From {min} night",
+    "nights_from_many": "From {min} nights",
+    "items": {
+      "multi": {
+        "name": "Multi-adventure",
+        "desc": "Trekking, kayaking, biking, horseback riding and fishing in a single trip, with mountain and fishing guides.",
+        "includes": ["Lodging and meals", "Bilingual guides", "Program activities", "[Transfers and equipment: to be confirmed]"]
+      },
+      "pesca": {
+        "name": "Fly fishing",
+        "desc": "Programs dedicated to the rivers and lakes of Aysén, with guides who know every stretch of water.",
+        "includes": ["Lodging and meals", "Bilingual fishing guides", "Guided fishing days", "[Transfers and license: to be confirmed]"]
+      },
+      "aloja": {
+        "name": "Lodging",
+        "desc": "Flexible stays at any of our three properties, in high and low season.",
+        "includes": ["Lodging", "Breakfast", "[Other meals and activities: to be confirmed]"]
+      }
+    }
+  },
+  "availability": {
+    "eyebrow": "Availability",
+    "title": "{season} season: dates and spots.",
+    "intro": "Spots are limited: we host a maximum of 10 guests per week. Pick a departure and we will send you a proposal.",
+    "sample_note": "Sample data — replace with real availability (src/data/site.json).",
+    "updated": "Updated {date}",
+    "all": "All",
+    "col_program": "Program",
+    "col_dates": "Dates",
+    "col_nights": "Length",
+    "col_spots": "Spots",
+    "col_status": "Status",
+    "nights_n": "{n} nights",
+    "nights_1": "1 night",
+    "spots_n": "{n} spots",
+    "spots_1": "1 spot",
+    "spots_0": "No spots",
+    "status": { "available": "Available", "few": "Last spots", "full": "Full" },
+    "cta_ask": "Inquire",
+    "cta_wait": "Waitlist",
+    "lodging_note": "Lodging and custom programs: tell us the dates you are looking for.",
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "date_same_month": "{m} {d1}–{d2}, {y}",
+    "date_same_year": "{m1} {d1} – {m2} {d2}, {y}",
+    "date_diff_year": "{m1} {d1}, {y1} – {m2} {d2}, {y2}",
+    "date_single": "{m} {d}, {y}"
+  },
+  "gastro": {
+    "eyebrow": "Cuisine and nutrition",
+    "title": "Patagonian cooking and energy for the whole day.",
+    "body": "At CRL, the table is part of the program. We work with seasonal products from the Aysén region, and every menu is designed to support long days outdoors: complete dishes, good hydration and trail food for the river, the mountain or the lake.",
+    "items": [
+      {
+        "icon": "leaf",
+        "title": "Products from Aysén",
+        "text": "Regional, seasonal ingredients, cooked with technique and without fuss. [Name real producers and dishes.]"
+      },
+      {
+        "icon": "bolt",
+        "title": "Nutrition for the day",
+        "text": "Breakfasts that sustain, field lunches (picnic or lunch box) and snacks to keep energy and focus up through hours of fishing, trekking or riding."
+      },
+      {
+        "icon": "heart",
+        "title": "Diets and allergies",
+        "text": "Vegetarian, vegan, gluten-free or other needs: tell us when you book and we will build it into the menu for your stay."
+      },
+      {
+        "icon": "glass",
+        "title": "The table at the end of the day",
+        "text": "Dinner closes the day: a shared table, Chilean wines and time to tell the story of the day. [Confirm drinks list.]"
+      }
+    ],
+    "photo_note": "[Kitchen or table photo — replace]",
+    "draft_note": "Draft content — to be validated with the kitchen and management (producers, menus, diets, drinks)."
+  },
+  "team": {
+    "eyebrow": "Team and guides",
+    "title": "The faces behind every expedition.",
+    "intro": "Every outing is led by bilingual guides with years of experience on the rivers and mountains of Aysén. [Replace with real photos and biographies.]",
+    "items": [
+      { "name": "[Founder's name]", "role": "Founder and director", "bio": "[Short bio — background, why they founded CRL, years in the region.]" },
+      { "name": "[Name]", "role": "Senior fishing guide", "bio": "[Years of experience, home rivers, certifications.]" },
+      { "name": "[Name]", "role": "Mountain guide", "bio": "[Mountain certifications, specialty in trekking and horseback riding.]" },
+      { "name": "[Name]", "role": "Lodge chef", "bio": "[Training, approach to Patagonian and seasonal cooking.]" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What guests say about their experience.",
+    "intro": "[Replace with real reviews from Google, TripAdvisor or guest emails, with their permission.]",
+    "placeholder": "Placeholder",
+    "items": [
+      { "quote": "[Real guest testimonial.]", "who": "[Guest name]", "meta": "[Country · month/year]" },
+      { "quote": "[Real testimonial — about the fishing experience or the guides.]", "who": "[Guest name]", "meta": "[Country · month/year]" },
+      { "quote": "[Real testimonial — about the lodge or the food.]", "who": "[Guest name]", "meta": "[Country · month/year]" }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Gallery",
+    "title": "Highlights.",
+    "alts": [
+      "Angler rowing a blue inflatable boat down a clear river between forests",
+      "Brown trout held in the water next to a fishing rod",
+      "Rainbow trout with its spots visible, held above the water",
+      "Trout underwater just before being released",
+      "Two anglers in a boat beside the rocky bank of a river",
+      "Boat on a calm river between forest, sky reflected in the water",
+      "Angler beside a waterfall on a river in Aysén",
+      "Angler on the shore of a lake with snow-capped mountains behind"
+    ],
+    "open": "Open full-size image"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Tell us about the trip you have in mind.",
+    "intro": "We reply in Spanish, English or French. If you spotted an open departure above, pick it and the form fills itself in.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone or WhatsApp (optional)",
+      "reply_lang": "Reply language",
+      "program": "Program",
+      "program_any": "Not sure yet",
+      "arrival": "Arrival",
+      "departure": "Departure",
+      "guests": "Number of guests",
+      "message": "Message",
+      "message_ph": "Alternative dates, experience level, dietary needs, special occasion…",
+      "consent": "I agree that CRL may use this information to answer my inquiry.",
+      "submit": "Send inquiry",
+      "sending": "Sending…",
+      "success": "Thank you. We received your inquiry and will reply soon.",
+      "error": "We could not send the form. Message us on WhatsApp or write to {email}.",
+      "mailto": "Opening your email app with the inquiry ready to send…",
+      "slot_selected": "Selected departure"
+    },
+    "info_title": "Reach us directly",
+    "address_label": "Getting here"
+  },
+  "footer": {
+    "tagline": "Fly fishing and adventure lodge in the heart of Chilean Patagonia — Aysén, Coyhaique.",
+    "contact": "Contact",
+    "explore": "Explore",
+    "follow": "Follow us",
+    "explore_links": [
+      { "href": "#history", "label": "Our story" },
+      { "href": "#lodges", "label": "Our lodges" },
+      { "href": "#programs", "label": "Programs" },
+      { "href": "#availability", "label": "Availability" },
+      { "href": "#cuisine", "label": "Cuisine and nutrition" }
+    ],
+    "whatsapp_direct": "WhatsApp direct →",
+    "privacy": "Privacy policy",
+    "terms": "Terms and conditions",
+    "rights": "© 2026 Coyhaique River Lodge"
+  },
+  "cookie": {
+    "text": "<strong>We use cookies.</strong> This site uses essential cookies to work and, only if you accept, anonymous measurement cookies.",
+    "reject": "Decline",
+    "accept": "Accept all"
+  }
+}
