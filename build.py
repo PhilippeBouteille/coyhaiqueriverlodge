@@ -336,6 +336,15 @@ def render(tpl, ctx, blocks):
     return PLACEHOLDER.sub(rep_var, out)
 
 
+def asset_version():
+    """Hash corto de site.css + site.js: cambia con cada modificación y evita servir versiones en caché."""
+    import hashlib
+    h = hashlib.md5()
+    for n in ("site.css", "site.js"):
+        h.update((ROOT / "assets" / n).read_bytes())
+    return h.hexdigest()[:8]
+
+
 def build_page(lang, tpl, site, i18n):
     t = i18n[lang]
     base = site["base_url"].rstrip("/")
@@ -355,6 +364,7 @@ def build_page(lang, tpl, site, i18n):
         "avail_title": t["availability"]["title"].format(season=av["season"]),
         "avail_updated": t["availability"]["updated"].format(date=fmt_date(date.fromisoformat(av["updated"]), t["availability"])),
         "config_json": build_config(lang, t, site),
+        "av": asset_version(),
     }
     return render(tpl, ctx, build_blocks(lang, t, site))
 
@@ -459,7 +469,7 @@ def check_html(lang, out):
             print(f"  [!] {lang}: enlace interno roto #{href}")
             ok = False
     for src in set(re.findall(r'(?:src|href)="\.\./(assets/[^"]+)"', out)):
-        if not (ROOT / src).exists():
+        if not (ROOT / src.split("?")[0]).exists():
             print(f"  [!] {lang}: archivo inexistente {src}")
             ok = False
     return ok

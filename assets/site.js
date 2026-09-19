@@ -46,14 +46,19 @@
   var navLogoImg = $('.nav-logo img');
   var revealed = false;
   var startGuard = null;
+  var wasOpen = document.body.classList.contains('instant');   // visita ya revelada en esta sesión (ver script en <body>)
+  function markOpen() { try { sessionStorage.setItem('crl_open', '1'); } catch (e) {} }
 
+  var watchTimer = null;
   function reducedMotion() {
     return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
   function revealSite() {
     if (revealed) return;
     revealed = true;
+    markOpen();
     if (startGuard) clearTimeout(startGuard);
+    if (watchTimer) clearInterval(watchTimer);
     try {
       if (cueLogo && navLogoImg && window.scrollY < 4 && !reducedMotion()) {
         cueLogo.style.animation = 'none';
@@ -73,11 +78,19 @@
     // Una vez revelado el sitio, el video sigue en bucle de fondo
     if (video) {
       video.loop = true;
-      if (video.ended) { try { video.currentTime = 0; var p = video.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {} }
+      // Si el video ya terminó o quedó detenido, se relanza en bucle
+      if (video.ended || video.paused || (video.duration && video.currentTime >= video.duration - 0.5)) {
+        try { video.currentTime = 0; var p = video.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
+      }
     }
   }
   function revealLater(ms) { setTimeout(revealSite, ms); }
 
+  if (wasOpen) {
+    revealed = true;                                      // el sitio ya está abierto: sin intro ni animación
+    var cue = $('.hero-cue'); if (cue) cue.style.display = 'none';
+    requestAnimationFrame(function () { requestAnimationFrame(function () { document.body.classList.remove('instant'); }); });
+  }
   if (hero) hero.addEventListener('click', revealSite);
   window.addEventListener('scroll', function () { if (window.scrollY > 4) revealSite(); }, { once: true, passive: true });
   document.addEventListener('keydown', function (e) {
@@ -100,12 +113,25 @@
     var webm = video.getAttribute('data-webm');
     var hls = video.getAttribute('data-hls');
     var giveUp = function () { revealLater(CFG.noVideoRevealMs); };
-    video.loop = !CFG.revealOnVideoEnd;                    // si se espera el final, no hay bucle hasta revelar
+    video.loop = !CFG.revealOnVideoEnd || wasOpen;         // si se espera el final, no hay bucle hasta revelar
     video.addEventListener('playing', function () { video.classList.add('playing'); });
     video.addEventListener('ended', function () { if (CFG.revealOnVideoEnd) revealSite(); });
+    // Red de seguridad: algunos flujos HLS no disparan 'ended' (sin EXT-X-ENDLIST, buffer final, etc.)
+    if (CFG.revealOnVideoEnd && !wasOpen) {
+      var lastT = -1, still = 0;
+      watchTimer = setInterval(function () {
+        if (revealed) { clearInterval(watchTimer); return; }
+        var d = video.duration, t = video.currentTime;
+        if (!video.classList.contains('playing') || !isFinite(d) || d <= 0) return;
+        if (t >= d - 0.4) { revealSite(); return; }                       // llegó al final
+        still = (Math.abs(t - lastT) < 0.05) ? still + 1 : 0;              // detenido (>4 s sin avanzar)
+        lastT = t;
+        if (still >= 8) revealSite();
+      }, 500);
+    }
     video.addEventListener('error', giveUp);
     // Si el video no arranca a tiempo (red lenta, flujo caído), no se deja al visitante esperando
-    startGuard = setTimeout(function () { if (!video.classList.contains('playing')) revealSite(); },
+    if (!wasOpen) startGuard = setTimeout(function () { if (!video.classList.contains('playing')) revealSite(); },
                             CFG.videoStartTimeoutMs || 8000);
     var play = function () { var p = video.play(); if (p && p.catch) p.catch(giveUp); };
     if (mp4 || webm) {

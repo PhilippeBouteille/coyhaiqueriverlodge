@@ -22,10 +22,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ assets }}/site.css">
+<link rel="stylesheet" href="{{ assets }}/site.css?v={{ av }}">
 <!--@jsonld-->
 </head>
 <body>
+<script>try{if(sessionStorage.getItem("crl_open")==="1"){document.body.className="revealed instant"}}catch(e){}</script>
 <a class="skip-link" href="#main">{{ t.ui.skip }}</a>
 <div class="mockup-tag">{{ t.ui.mockup }}</div>
 
@@ -336,6 +337,6 @@
 </div>
 
 <script id="crl-config" type="application/json">{{ config_json }}</script>
-<script src="{{ assets }}/site.js" defer></script>
+<script src="{{ assets }}/site.js?v={{ av }}" defer></script>
 </body>
 </html>

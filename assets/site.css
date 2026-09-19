@@ -117,6 +117,8 @@ body.revealed .hero-content{pointer-events:auto;}
 .hero-content > p.lead{transition-delay:.6s;}
 .hero-content > .hero-actions{transition-delay:.8s;}
 body.revealed .hero-content > *{opacity:1;transform:none;}
+body.instant *, body.instant *::before, body.instant *::after{transition:none !important;}
+body.instant .hero-cue{display:none;}
 .hero{cursor:pointer;}
 body.revealed .hero{cursor:default;}
 .hero-cue{
