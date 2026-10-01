@@ -26,9 +26,9 @@
   "_form_endpoint": "URL qui reçoit le POST JSON du formulaire (Supabase Edge Function, Formspree...). Vide = repli mailto vers contact.email.",
 
   "hero": {
-    "mp4": "",
-    "webm": "",
-    "hls": "https://coyhaiqueriverlodge.com/media/videos/12/master.m3u8",
+    "mp4": "assets/video/hero.mp4",
+    "webm": "assets/video/hero.webm",
+    "hls": "https://coyhaiqueriverlodge.com/media/videos/13/master.m3u8",
     "reveal_on_video_end": true,
     "_reveal_on_video_end": "true = el texto y el menú aparecen al terminar el video (el video se reproduce una vez). Clic, scroll o Tab los muestran antes. false = el video hace bucle y solo clic/scroll/Tab revelan.",
     "no_video_reveal_ms": 4000,
